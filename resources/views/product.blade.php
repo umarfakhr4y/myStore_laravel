@@ -4,7 +4,7 @@
 <div class="row">
     <div class="container-fluid">
         <div class="col-12 bg-white">
-            <button class="btn btn-success float-right mb-3 mt-1">Add</button>
+            <a class="btn btn-success float-right mb-3 mt-1" href={{url('product/tambah')}}>Add</a>
             <table class="table table-bordered">
                 <thead>
                   <tr>
@@ -37,6 +37,7 @@
                   
                 </tbody>
               </table>
+              {{$data->links()}}
         </div>
     </div>
 </div>    

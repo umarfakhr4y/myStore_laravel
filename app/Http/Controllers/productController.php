@@ -10,7 +10,7 @@ class productController extends Controller
 {
     public function index()
     {
-        $data = DB::select('select * from products');
+        $data = Product::paginate(5);
         return view('product',compact('data'));     
     }
 
@@ -42,7 +42,14 @@ class productController extends Controller
 
             // redirect
             return redirect('/product');
-	}
+    }
+    
+    public function tambah()
+    {
+        return view('tambahproduct');     
+
+
+    }
  
 
 

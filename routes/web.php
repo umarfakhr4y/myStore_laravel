@@ -18,6 +18,9 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('product/tambah', $url. '\productController@tambah');
+
+
 Route::get('product/edit/{id}', $url. '\productController@edit');
 Route::post('product/update', $url. '\productController@update');
 
