@@ -20,16 +20,8 @@
                     @csrf
                    
                     <div class="form-group">
-                        <label for="exampleInputEmail1">ID</label>
-                        <input type="text" class="form-control" value="" name="id" readonly>
-                      </div>
-                    <div class="form-group">
                         <label for="exampleInputEmail1">Product Title</label>
                         <input type="text" class="form-control" value="" name="title">
-                      </div>
-                      <div class="form-group">
-                        <label for="exampleInputPassword1">Product Slug</label>
-                        <input type="text" class="form-control" value="" name="slug">
                       </div>
                       <div class="form-group">
                           <label for="exampleInputPassword1">Product Image</label>
