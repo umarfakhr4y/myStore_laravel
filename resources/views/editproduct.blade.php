@@ -15,31 +15,31 @@
                 <h2>Edit</h2>
             </div>
             <div class="card-body">
-
-                @foreach ($data as $users)
                 <form action="/product/update" method="POST">
                     @csrf
-                   
+                   @method('patch')
+
                     <div class="form-group">
                         <label for="exampleInputEmail1">ID</label>
-                        <input type="text" class="form-control" value="{{$users->id}}" name="id" readonly>
+                        <input type="text" class="form-control" value="{{$data->id}}" name="id" readonly>
                       </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Product Title</label>
-                        <input type="text" class="form-control" value="{{$users->product_title}}" name="title">
+                        <input type="text" class="form-control" value="{{$data->product_title}}" name="product_title">
+                        
                       </div>
                       <div class="form-group">
                         <label for="exampleInputPassword1">Product Slug</label>
-                        <input type="text" class="form-control" value="{{$users->product_slug}}" name="slug">
+                        <input type="text" class="form-control" value="{{$data->product_slug}}" name="product_slug">
                       </div>
+                      
                       <div class="form-group">
                           <label for="exampleInputPassword1">Product Image</label>
-                          <input type="text" class="form-control" value="{{$users->product_image}}" name="image">
+                          <input type="text" class="form-control" value="{{$data->product_image}}" name="product_image">
+                          
+
                       </div>
                       <input class="btn btn-primary float-right" type="submit" value="Simpan Data">
-                      @endforeach
-
-                    
                 </form>
             </div>
         </div>
@@ -48,5 +48,3 @@
        
 </div>    
 @endsection
-
-

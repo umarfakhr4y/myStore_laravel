@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    protected $table = "products";
     use HasFactory;
+    protected $fillable = ['product_title', 'product_slug', 'product_image'];
+    
+    public function descriptionProduct()
+    {
+        return $this->hasOne(descriptionProduct::class);
+    }
 
-    protected $fillable = [
-        'product_price',
-];
+    public function category()
+    {
+        return $this->belongTo(Category::class);
+    }
 }

@@ -16,17 +16,28 @@
             </div>
             <div class="card-body">
 
-                <form action="/product/update" method="POST">
+                <form action="/product/simpan" method="POST">
                     @csrf
-                   
+                    @if(Session::has('fail'))
+                    <div class="alert alert-danger">
+                        {{Session::get('fail')}}
+                    </div>
+                    @endif
                     <div class="form-group">
                         <label for="exampleInputEmail1">Product Title</label>
-                        <input type="text" class="form-control" value="" name="title">
-                      </div>
-                      <div class="form-group">
-                          <label for="exampleInputPassword1">Product Image</label>
-                          <input type="text" class="form-control" value="" name="image">
-                      </div>
+                        <input type="text" class="form-control" value="" name="product_title">
+                        @if(Session::has('code'))                        
+                            <code>{{Session::get('code')}}</code>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Product price</label>
+                        <input type="text" class="form-control" value="" name="product_price">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Product Image</label>
+                        <input type="text" class="form-control" value="" name="product_image">
+                    </div>
                       <input class="btn btn-primary float-right" type="submit" value="Tambah Data">
 
                     
